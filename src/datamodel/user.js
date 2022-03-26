@@ -1,5 +1,8 @@
 const dbusers = require('../../assets/dbusers.json');
+const UsersUtils = require('../utils/users');
 const users = dbusers.results;
+
+const maxResults = 250;
 
 const _ = require('lodash');
 
@@ -8,7 +11,8 @@ const getAllUsers = () => {
 }
 
 const getAllUsersFromIndex = (i) => {
-  return _.drop(users, i);
+  let endPosition = Math.min((i+250) - 1, users.length);
+  return users.slice(i, endPosition);
 }
 
 const getAllUsersWithSearch = (q) => {

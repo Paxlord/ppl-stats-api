@@ -7,8 +7,15 @@ router.get('/', (req, res) => {
   res.send(JSON.stringify(UserDataModel.getAllUsers()));
 });
 
+router.get('/pagination/:i', (req, res) => {
+  res.send(JSON.stringify(UserDataModel.getAllUsersFromIndex(req.params.i)));
+});
+
 router.get('/filter', (req, res) => {
   
+  let q = req.query;
+  UserDataModel.getAllUsersWithSearch(q);
+
 });
 
 module.exports = router;
