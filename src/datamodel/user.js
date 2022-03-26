@@ -43,4 +43,19 @@ const getTotalUsersCount = () => {
   return users.length;
 }
 
-module.exports = { getAllUsers, getAllUsersFromIndex, getAllUsersWithSearch, getTotalUsersCount };
+const getUserGenderDataStats = () => {
+  return _.countBy(users, 'gender');
+}
+
+const getUserCountryDataStats = () => {
+  return _.countBy(users, 'location.country');
+}
+
+module.exports = { 
+  getAllUsers,
+  getAllUsersFromIndex, 
+  getAllUsersWithSearch, 
+  getTotalUsersCount, 
+  getUserGenderDataStats, 
+  getUserCountryDataStats  
+};

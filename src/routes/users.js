@@ -19,7 +19,15 @@ router.get('/filter', (req, res) => {
 });
 
 router.get('/count', (req, res) => {
-  res.send(UserDataModel.getTotalUsersCount());
+  res.send(""+ UserDataModel.getTotalUsersCount());
+});
+
+router.get('/stats/gender', (req, res) => {
+  res.send(UserDataModel.getUserGenderDataStats());
+});
+
+router.get('/stats/country', (req, res) => {
+  res.send(UserDataModel.getUserCountryDataStats());
 });
 
 module.exports = router;
