@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const getAllUsers = require('../datamodel/user');
+const UserDataModel = require('../datamodel/user');
 
 
 router.get('/', (req, res) => {
-  res.send(JSON.stringify(getAllUsers()));
+  res.send(JSON.stringify(UserDataModel.getAllUsers()));
 });
 
 router.get('/filter', (req, res) => {
