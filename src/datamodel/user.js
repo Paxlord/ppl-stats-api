@@ -39,4 +39,8 @@ const getAllUsersWithSearch = (q) => {
 
 }
 
-module.exports = { getAllUsers, getAllUsersFromIndex, getAllUsersWithSearch };
+const getTotalUsersCount = () => {
+  return users.length;
+}
+
+module.exports = { getAllUsers, getAllUsersFromIndex, getAllUsersWithSearch, getTotalUsersCount };

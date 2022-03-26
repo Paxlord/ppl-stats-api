@@ -18,4 +18,8 @@ router.get('/filter', (req, res) => {
 
 });
 
+router.get('/count', (req, res) => {
+  res.send(UserDataModel.getTotalUsersCount());
+});
+
 module.exports = router;
