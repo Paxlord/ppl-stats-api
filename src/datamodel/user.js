@@ -4,9 +4,17 @@ const users = dbusers.results;
 const _ = require('lodash');
 
 const getAllUsers = () => {
+  return users;
+}
 
-  return users[0];
+const getAllUsersFromIndex = (i) => {
+  return _.drop(users, i);
+}
+
+const getAllUsersWithSearch = (q) => {
+
+  console.log(q);
 
 }
 
-module.exports = getAllUsers;
+module.exports = { getAllUsers, getAllUsersFromIndex, getAllUsersWithSearch };
