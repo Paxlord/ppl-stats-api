@@ -14,7 +14,7 @@ router.get('/pagination/:i', (req, res) => {
 router.get('/filter', (req, res) => {
   
   let q = req.query;
-  UserDataModel.getAllUsersWithSearch(q);
+  res.send(UserDataModel.getAllUsersWithSearch(q));
 
 });
 

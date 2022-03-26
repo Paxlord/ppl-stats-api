@@ -17,7 +17,25 @@ const getAllUsersFromIndex = (i) => {
 
 const getAllUsersWithSearch = (q) => {
 
-  console.log(q);
+  let filteredUsers = _.clone(users);
+  
+  if(q.name)
+    filteredUsers = UsersUtils.filterUsersByName(filteredUsers, q.name);
+  
+  if(q.city)
+    filteredUsers = UsersUtils.filterUsersByCity(filteredUsers, q.city);
+
+  if(q.gender)
+    filteredUsers = UsersUtils.filterUsersByGender(filteredUsers, q.gender)
+
+  if(q.state)
+    filteredUsers = UsersUtils.filterUsersByState(filteredUsers, q.state)
+
+  if(q.phone)
+    filteredUsers = UsersUtils.filterUsersByPhone(filteredUsers, q.phone)
+
+  
+  return filteredUsers;
 
 }
 
