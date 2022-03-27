@@ -12,10 +12,8 @@ router.get('/pagination/:i', (req, res) => {
 });
 
 router.get('/filter', (req, res) => {
-  
   let q = req.query;
   res.send(UserDataModel.getAllUsersWithSearch(q));
-
 });
 
 router.get('/count', (req, res) => {

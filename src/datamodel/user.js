@@ -15,6 +15,14 @@ const getAllUsersFromIndex = (i) => {
   return users.slice(i, endPosition);
 }
 
+const getOneUser = (uuid) => {
+  return _.find(users, (user) => user.login.uuid === uuid);
+}
+
+const getOneUserFromUsername = (username) => {
+  return _.find(users, (user) => user.login.username === username);
+}
+
 const getAllUsersWithSearch = (q) => {
 
   let filteredUsers = _.clone(users);
@@ -57,5 +65,7 @@ module.exports = {
   getAllUsersWithSearch, 
   getTotalUsersCount, 
   getUserGenderDataStats, 
-  getUserCountryDataStats  
+  getUserCountryDataStats ,
+  getOneUser,
+  getOneUserFromUsername,
 };
