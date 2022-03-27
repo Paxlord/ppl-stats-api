@@ -4,8 +4,10 @@ const PORT = 5500;
 
 const userRouter = require('./routes/users');
 const login = require('./utils/auth');
+const verifyToken = require('./middleware/verify');
 
-app.use(cors())
+app.use(cors());
+app.use(verifyToken);
 
 app.get('/', (req, res) => {
   res.send("Hello world");
