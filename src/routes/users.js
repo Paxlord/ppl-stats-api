@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const UserDataModel = require('../datamodel/user');
+const requireLogin = require('../middleware/requireLogin');
 
+router.use(requireLogin);
 
 router.get('/', (req, res) => {
   res.send(JSON.stringify(UserDataModel.getAllUsers()));
