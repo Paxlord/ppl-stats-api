@@ -13,9 +13,10 @@ router.get('/pagination/:i', (req, res) => {
   res.send((UserDataModel.getAllUsersFromIndex(req.params.i, q)));
 });
 
-router.get('/:id'), (req, res) => {
+router.get('/profile/:id', (req, res) => {
+  console.log(req.params.id);
   res.send(UserDataModel.getOneUser(req.params.id));
-}
+});
 
 router.get('/filter', (req, res) => {
   let q = req.query;

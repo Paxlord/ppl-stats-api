@@ -17,7 +17,6 @@ const getAllUsersFromIndex = (i, q) => {
 
   if(q){
     userArray = getAllUsersWithSearch(q);
-    console.log("passage", q);
   }
   
   let endPosition = Math.min(((page+1)*250) - 1, userArray.length)
