@@ -23,6 +23,10 @@ const getOneUserFromUsername = (username) => {
   return _.find(users, (user) => user.login.username === username);
 }
 
+const getSpecificNumbersOfUsers = (i) => {
+  return users.slice(0, i);
+}
+
 const getAllUsersWithSearch = (q) => {
 
   let filteredUsers = _.clone(users);
@@ -72,4 +76,5 @@ module.exports = {
   getUserCountryDataStats ,
   getOneUser,
   getOneUserFromUsername,
+  getSpecificNumbersOfUsers,
 };

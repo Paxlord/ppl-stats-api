@@ -28,4 +28,8 @@ router.get('/stats/country', (req, res) => {
   res.send(UserDataModel.getUserCountryDataStats());
 });
 
+router.get('/localisations', (req, res) => {
+  res.send(UserDataModel.getSpecificNumbersOfUsers());
+});
+
 module.exports = router;
