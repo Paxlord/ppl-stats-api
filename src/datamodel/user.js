@@ -56,7 +56,11 @@ const getUserGenderDataStats = () => {
 }
 
 const getUserCountryDataStats = () => {
-  return _.countBy(users, 'location.country');
+
+  let countriesObj = _.countBy(users, 'location.country');
+  countriesObj = Object.keys(countriesObj).map((key) => ({countryLabel: key, count: countriesObj[key]}));
+
+  return _.sortBy(countriesObj, "count").reverse();
 }
 
 module.exports = { 
