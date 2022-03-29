@@ -11,8 +11,8 @@ const getAllUsers = () => {
 }
 
 const getAllUsersFromIndex = (i) => {
-  let endPosition = Math.min((i+250) - 1, users.length);
-  return users.slice(i, endPosition);
+  let endPosition = Math.min(((i+1)*250) - 1, users.length);
+  return users.slice(i*250, endPosition);
 }
 
 const getOneUser = (uuid) => {
