@@ -10,12 +10,18 @@ const getAllUsers = () => {
   return users;
 }
 
-const getAllUsersFromIndex = (i) => {
+const getAllUsersFromIndex = (i, q) => {
 
   let page = parseInt(i);
+  let userArray = users;
 
-  let endPosition = Math.min(((page+1)*250) - 1, users.length);
-  return users.slice(page*250, endPosition);
+  if(q){
+    userArray = getAllUsersWithSearch(q);
+    console.log("passage", q);
+  }
+  
+  let endPosition = Math.min(((page+1)*250) - 1, userArray.length)
+  return userArray.slice(page*250, endPosition);
 }
 
 const getOneUser = (uuid) => {

@@ -4,11 +4,13 @@ const UserDataModel = require('../datamodel/user');
 const requireLogin = require('../middleware/requireLogin');
 
 router.get('/', (req, res) => {
+  let q = req.query;
   res.send((UserDataModel.getAllUsers()));
 });
 
 router.get('/pagination/:i', (req, res) => {
-  res.send((UserDataModel.getAllUsersFromIndex(req.params.i)));
+  let q = req.query;
+  res.send((UserDataModel.getAllUsersFromIndex(req.params.i, q)));
 });
 
 router.get('/:id'), (req, res) => {
